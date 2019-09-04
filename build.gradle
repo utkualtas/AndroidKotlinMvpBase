@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
@@ -19,10 +19,28 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://jitpack.io" }
         
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+
+ext{
+    recyclerview = "1.1.0-beta03"
+    appcompat = "1.1.0-rc01"
+    constraintlayout = "2.0.0-beta2"
+    cardview = "1.0.0"
+    fragmentktx = "1.2.0-alpha02"
+    lifecycle_version = "2.0.0"
+    retrofit = "2.6.1"
+    dagger2Version = "2.24"
+    rxjava = "2.2.12"
+    rxAndroid = "2.1.1"
+    picasso = "2.71828"
 }
