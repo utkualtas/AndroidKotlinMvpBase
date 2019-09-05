@@ -1,7 +1,7 @@
 package com.rootylabs.androidkotlinmvpbase.di.module
 
-import com.rootylabs.androidkotlinmvpbase.ui.BaseActivity
 import com.rootylabs.androidkotlinmvpbase.ui.MainActivity
+import com.rootylabs.androidkotlinmvpbase.ui.base.BaseActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,5 +10,6 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBuilderModule {
     @ContributesAndroidInjector
     abstract fun contributeMainActivity(): MainActivity
-
+    @ContributesAndroidInjector
+    abstract fun contributeBaseActivity(): BaseActivity
 }
