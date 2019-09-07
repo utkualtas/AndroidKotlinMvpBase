@@ -1,8 +1,11 @@
 package com.rootylabs.androidkotlinmvpbase.ui.base
 
+import com.rootylabs.androidkotlinmvpbase.data.DataManager
 import javax.inject.Inject
 
-class BasePresenter<V: BaseMvpView> @Inject constructor() : BaseMvpPresenter<V> {
+open class BasePresenter<V: BaseMvpView> @Inject constructor() : BaseMvpPresenter<V> {
+
+    @Inject lateinit var mDataManager: DataManager
 
     private var mMvpView:V? = null
 
@@ -16,4 +19,6 @@ class BasePresenter<V: BaseMvpView> @Inject constructor() : BaseMvpPresenter<V> 
     }
 
     fun getMvpView():V? = mMvpView
+
+    fun getDataManager(): DataManager? = mDataManager
 }

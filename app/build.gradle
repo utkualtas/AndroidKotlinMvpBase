@@ -34,10 +34,10 @@ android {
         flavorDimensions "version"
 
         beta {
-            buildConfigField "String", "BASE_URL", '"http://beta.rootylabs.com/api/v1"'
+            buildConfigField "String", "BASE_URL", '"https://jsonplaceholder.typicode.com/"'
         }
         full {
-            buildConfigField "String", "BASE_URL", '"http://api.rootylabs.com/api/v1"'
+            buildConfigField "String", "BASE_URL", '"https://jsonplaceholder.typicode.com/"'
         }
     }
 
@@ -79,6 +79,7 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
 
     //Dagger 2
     implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
@@ -94,6 +95,22 @@ dependencies {
 
     //Picasso
     implementation "com.squareup.picasso:picasso:$rootProject.picasso"
+
+    //Live Data
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.livedata"
+
+    //Room
+    implementation "androidx.room:room-runtime:$rootProject.room_version"
+    kapt "androidx.room:room-compiler:$rootProject.room_version" // For Kotlin use kapt instead of annotationProcessor
+    implementation "androidx.room:room-rxjava2:$rootProject.room_version"
+    implementation "androidx.room:room-ktx:$rootProject.room_version"
+
+
+    implementation 'org.jetbrains.anko:anko-common:0.9'
+
+
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.paging_version" // For Kotlin use paging-runtime-ktx
+    implementation "androidx.paging:paging-rxjava2:$rootProject.paging_version"
 
 
 
